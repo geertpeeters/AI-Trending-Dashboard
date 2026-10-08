@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search · AI Trending</title>
+<meta name="description" content="Search the AI trending index.">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="search">
+<header class="site-header">
+  <a class="brand" href="/index.html" data-tip-en="Back to the dashboard" data-tip-nl="Terug naar het dashboard">AI&nbsp;TRENDING<span class="cursor" aria-hidden="true">_</span></a>
+  <div class="header-meta">
+    <span class="meta-key"><span class="i18n" lang="en">updated</span><span class="i18n" lang="nl">bijgewerkt</span>:</span>
+    <span class="meta-val" id="search-updated">—</span>
+  </div>
+  <nav class="header-actions">
+    <a class="head-link" href="/search.html" data-tip-en="Search titles, tags, summaries and categories" data-tip-nl="Zoek in titels, tags, samenvattingen en categorieën"><span class="i18n" lang="en">search</span><span class="i18n" lang="nl">zoek</span></a>
+    <a class="head-link" href="/manage.html" data-tip-en="Add your own references, topics and sources — writes only from your home network" data-tip-nl="Voeg eigen referenties, topics en bronnen toe — schrijven alleen vanaf je thuisnetwerk"><span class="i18n" lang="en">manage</span><span class="i18n" lang="nl">beheren</span></a>
+    <a class="head-link" href="/help.html" data-tip-en="Help: how this dashboard runs and how to operate it" data-tip-nl="Help: zo draait en bedien je dit dashboard"><span class="i18n" lang="en">help</span><span class="i18n" lang="nl">help</span></a>
+    <div class="lang-switch" role="group" aria-label="language">
+      <button type="button" class="lang-btn" data-lang="nl" data-tip-en="Switch the site to Dutch" data-tip-nl="Zet de site op Nederlands">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" data-tip-en="Switch the site to English" data-tip-nl="Zet de site op Engels">EN</button>
+    </div>
+  </nav>
+</header>
+
+<nav class="tabs-wrap" aria-label="categories">
+  <div class="tabs-fade tabs-fade--left" aria-hidden="true"></div>
+  <div class="tabs" id="tabs">
+    <a class="tab" data-cat="all" href="/index.html" data-tip-en="Show every category" data-tip-nl="Toon alle categorieën"><span class="i18n" lang="en">all</span><span class="i18n" lang="nl">alles</span></a>
+    <a class="tab" data-cat="models" href="/categories/models.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Models</span><span class="i18n" lang="nl">Modellen</span></a>
+    <a class="tab" data-cat="agentic-frameworks" href="/categories/agentic-frameworks.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Agentic frameworks</span><span class="i18n" lang="nl">Agentic frameworks</span></a>
+    <a class="tab" data-cat="skill-design" href="/categories/skill-design.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Skill design</span><span class="i18n" lang="nl">Skill-design</span></a>
+    <a class="tab" data-cat="ai-standaarden" href="/categories/ai-standaarden.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">AI standards</span><span class="i18n" lang="nl">AI-standaarden</span></a>
+    <a class="tab" data-cat="token-providers" href="/categories/token-providers.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Token providers</span><span class="i18n" lang="nl">Tokenproviders</span></a>
+    <a class="tab" data-cat="top-20-free-models" href="/categories/top-20-free-models.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Top 20 free models</span><span class="i18n" lang="nl">Top 20 gratis modellen</span></a>
+    <a class="tab" data-cat="token-compressors" href="/categories/token-compressors.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Token compressors</span><span class="i18n" lang="nl">Tokencompressors</span></a>
+    <a class="tab" data-cat="decision-models" href="/categories/decision-models.html" data-tip-en="Open this category in the dashboard" data-tip-nl="Open deze categorie in het dashboard"><span class="i18n" lang="en">Decision models</span><span class="i18n" lang="nl">Beslismodellen</span></a>
+  </div>
+  <div class="tabs-fade tabs-fade--right" aria-hidden="true"></div>
+</nav>
+
+<main id="main" class="page-search">
+  <section class="page-head">
+    <h1 class="page-title"><span class="i18n" lang="en">Search the index</span><span class="i18n" lang="nl">Doorzoek de index</span></h1>
+    <p class="page-desc"><span class="i18n" lang="en">Client-side search over titles, tags, summaries and categories.</span><span class="i18n" lang="nl">Zoeken in de browser: titels, tags, samenvattingen en categorieen.</span></p>
+  </section>
+
+  <div class="search-box">
+    <input class="search-input" id="q" type="search" autocomplete="off" spellcheck="false" autofocus>
+  </div>
+  <div class="search-count" id="count"></div>
+  <div class="results" id="results"></div>
+
+  <section class="discover" id="discover">
+    <h2 class="section-title"><span class="i18n" lang="en">discover live</span><span class="i18n" lang="nl">live ontdekken</span></h2>
+    <p class="page-desc"><span class="i18n" lang="en">Search live sources and save results as a reference or as a topic for a category.</span><span class="i18n" lang="nl">Zoek in live bronnen en bewaar resultaten als referentie of als topic voor een categorie.</span></p>
+
+    <form class="discover-box" id="discover-form" autocomplete="off">
+      <input class="search-input" id="discover-q" type="search" spellcheck="false" data-tip-en="Query for the live sources; leave empty for what is trending right now" data-tip-nl="Zoekopdracht voor de live bronnen; leeg laten voor wat nu trending is">
+      <span class="src-toggles">
+        <label class="src-toggle" data-tip-en="Include Hacker News in the live search" data-tip-nl="Neem Hacker News mee in de live zoekopdracht"><input type="checkbox" name="src" value="hn" checked> HN</label>
+        <label class="src-toggle" data-tip-en="Include GitHub in the live search" data-tip-nl="Neem GitHub mee in de live zoekopdracht"><input type="checkbox" name="src" value="github" checked> GitHub</label>
+        <label class="src-toggle" data-tip-en="Include arXiv in the live search" data-tip-nl="Neem arXiv mee in de live zoekopdracht"><input type="checkbox" name="src" value="arxiv" checked> arXiv</label>
+        <label class="src-toggle" data-tip-en="Include OpenRouter in the live search" data-tip-nl="Neem OpenRouter mee in de live zoekopdracht"><input type="checkbox" name="src" value="openrouter"> OpenRouter</label>
+      </span>
+      <button class="btn" type="submit" data-tip-en="Search the live sources above (empty query = what is trending right now)" data-tip-nl="Doorzoek de live bronnen bovenaan (lege zoekopdracht = nu trending)"><span class="i18n" lang="en">search</span><span class="i18n" lang="nl">zoeken</span></button>
+    </form>
+
+    <div class="discover-save">
+      <label for="discover-category"><span class="i18n" lang="en">save in category</span><span class="i18n" lang="nl">opslaan in categorie</span>:</label>
+      <select class="select" id="discover-category" data-tip-en="Category where saved results end up" data-tip-nl="Categorie waarin opgeslagen resultaten terechtkomen"></select>
+    </div>
+
+    <div class="search-count" id="discover-status"></div>
+    <div class="results" id="discover-results"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span><span class="i18n" lang="en">static index</span><span class="i18n" lang="nl">statische index</span></span>
+  <span class="meta-sep">|</span>
+  <span>HN Algolia · GitHub · OpenRouter · arXiv · RSS</span>
+</footer>
+
+<script src="/assets/i18n.js" defer></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/search.js" defer></script>
+<script src="/assets/discover.js" defer></script>
+</body>
+</html>

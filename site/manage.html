@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage · AI Trending</title>
+<meta name="description" content="Manage references, topics and sources for the AI trending dashboard.">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="manage">
+<header class="site-header">
+  <a class="brand" href="/index.html" data-tip-en="Back to the dashboard" data-tip-nl="Terug naar het dashboard">AI&nbsp;TRENDING<span class="cursor" aria-hidden="true">_</span></a>
+  <div class="header-meta">
+    <span class="meta-key"><span class="i18n" lang="en">manage</span><span class="i18n" lang="nl">beheren</span>:</span>
+    <span class="meta-val"><span class="i18n" lang="en">references · topics · sources</span><span class="i18n" lang="nl">referenties · topics · bronnen</span></span>
+  </div>
+  <nav class="header-actions">
+    <a class="head-link" href="/search.html" data-tip-en="Search titles, tags, summaries and categories" data-tip-nl="Zoek in titels, tags, samenvattingen en categorieën"><span class="i18n" lang="en">search</span><span class="i18n" lang="nl">zoek</span></a>
+    <a class="head-link is-active" href="/manage.html" data-tip-en="Add your own references, topics and sources — writes only from your home network" data-tip-nl="Voeg eigen referenties, topics en bronnen toe — schrijven alleen vanaf je thuisnetwerk"><span class="i18n" lang="en">manage</span><span class="i18n" lang="nl">beheren</span></a>
+    <a class="head-link" href="/help.html" data-tip-en="Help: how this dashboard runs and how to operate it" data-tip-nl="Help: zo draait en bedien je dit dashboard"><span class="i18n" lang="en">help</span><span class="i18n" lang="nl">help</span></a>
+    <div class="lang-switch" role="group" aria-label="language">
+      <button type="button" class="lang-btn" data-lang="nl" data-tip-en="Switch the site to Dutch" data-tip-nl="Zet de site op Nederlands">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" data-tip-en="Switch the site to English" data-tip-nl="Zet de site op Engels">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="page-manage">
+  <section class="page-head">
+    <h1 class="page-title"><span class="i18n" lang="en">Manage</span><span class="i18n" lang="nl">Beheren</span></h1>
+    <p class="page-desc"><span class="i18n" lang="en">Add your own references, topics and sources. Changes apply at the next crawl.</span><span class="i18n" lang="nl">Voeg eigen referenties, topics en bronnen toe. Wijzigingen gelden bij de volgende crawl.</span></p>
+    <p class="manage-status" id="manage-status" role="status"></p>
+  </section>
+
+  <section class="manage-section">
+    <h2 class="section-title"><span class="i18n" lang="en">references</span><span class="i18n" lang="nl">referenties</span></h2>
+    <form class="manage-form" id="form-reference" autocomplete="off">
+      <label class="field field-wide">
+        <span class="field-label"><span class="i18n" lang="en">url</span><span class="i18n" lang="nl">url</span></span>
+        <input class="search-input" name="url" type="url" required placeholder="https://">
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">title</span><span class="i18n" lang="nl">titel</span></span>
+        <input class="search-input" name="title" type="text" maxlength="200">
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">category</span><span class="i18n" lang="nl">categorie</span></span>
+        <select class="select" name="category" data-category-select required></select>
+      </label>
+      <label class="field field-wide">
+        <span class="field-label"><span class="i18n" lang="en">note</span><span class="i18n" lang="nl">notitie</span></span>
+        <input class="search-input" name="note" type="text" maxlength="500">
+      </label>
+      <button class="btn" type="submit" data-tip-en="Save this reference — applied at the next crawl (writes only from your home network)" data-tip-nl="Bewaar deze referentie — geldt bij de volgende crawl (schrijven alleen vanaf je thuisnetwerk)"><span class="i18n" lang="en">add</span><span class="i18n" lang="nl">toevoegen</span></button>
+    </form>
+    <div class="manage-list" id="list-references"></div>
+  </section>
+
+  <section class="manage-section">
+    <h2 class="section-title"><span class="i18n" lang="en">topics</span><span class="i18n" lang="nl">topics</span></h2>
+    <form class="manage-form" id="form-topic" autocomplete="off">
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">category</span><span class="i18n" lang="nl">categorie</span></span>
+        <select class="select" name="category_id" data-category-select required></select>
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">title (en)</span><span class="i18n" lang="nl">titel (en)</span></span>
+        <input class="search-input" name="title_en" type="text" maxlength="80" required>
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">title (nl)</span><span class="i18n" lang="nl">titel (nl)</span></span>
+        <input class="search-input" name="title_nl" type="text" maxlength="80">
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">query</span><span class="i18n" lang="nl">zoekopdracht</span></span>
+        <input class="search-input" name="query" type="text" maxlength="120">
+      </label>
+      <label class="field field-wide">
+        <span class="field-label"><span class="i18n" lang="en">keywords (comma separated)</span><span class="i18n" lang="nl">sleutelwoorden (komma-gescheiden)</span></span>
+        <input class="search-input" name="keywords" type="text">
+      </label>
+      <button class="btn" type="submit" data-tip-en="Save this topic — drives fetches from the next crawl on (writes only from your home network)" data-tip-nl="Bewaar dit topic — stuurt het ophalen vanaf de volgende crawl (schrijven alleen vanaf je thuisnetwerk)"><span class="i18n" lang="en">add</span><span class="i18n" lang="nl">toevoegen</span></button>
+    </form>
+    <div class="manage-groups" id="list-topics"></div>
+  </section>
+
+  <section class="manage-section">
+    <h2 class="section-title"><span class="i18n" lang="en">sources</span><span class="i18n" lang="nl">bronnen</span></h2>
+    <form class="manage-form" id="form-source" autocomplete="off">
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">category</span><span class="i18n" lang="nl">categorie</span></span>
+        <select class="select" name="category" data-category-select required></select>
+      </label>
+      <label class="field">
+        <span class="field-label"><span class="i18n" lang="en">type</span><span class="i18n" lang="nl">type</span></span>
+        <select class="select" name="type">
+          <option value="hn_search">hn_search</option>
+          <option value="github_search">github_search</option>
+          <option value="arxiv">arxiv</option>
+          <option value="rss">rss</option>
+          <option value="openrouter">openrouter</option>
+        </select>
+      </label>
+      <label class="field field-wide">
+        <span class="field-label"><span class="i18n" lang="en">query or feed url</span><span class="i18n" lang="nl">query of feed-url</span></span>
+        <input class="search-input" name="query" type="text" maxlength="300" required>
+      </label>
+      <label class="field field-narrow">
+        <span class="field-label"><span class="i18n" lang="en">limit</span><span class="i18n" lang="nl">limiet</span></span>
+        <input class="search-input" name="limit" type="number" min="1" max="50" value="15">
+      </label>
+      <button class="btn" type="submit" data-tip-en="Save this source — used from the next crawl on (writes only from your home network)" data-tip-nl="Bewaar deze bron — wordt vanaf de volgende crawl gebruikt (schrijven alleen vanaf je thuisnetwerk)"><span class="i18n" lang="en">add</span><span class="i18n" lang="nl">toevoegen</span></button>
+    </form>
+    <div class="manage-groups" id="list-sources"></div>
+  </section>
+
+  <section class="manage-section">
+    <h2 class="section-title">crawl</h2>
+    <div class="manage-crawl">
+      <button class="btn" type="button" id="btn-crawl" data-tip-en="Start a full crawl in the background; refresh the page in a few minutes" data-tip-nl="Start een volledige crawl op de achtergrond; ververs de pagina over enkele minuten"><span class="i18n" lang="en">crawl now</span><span class="i18n" lang="nl">nu crawlen</span></button>
+      <span class="crawl-status" id="crawl-status"></span>
+    </div>
+  </section>
+
+  <section class="manage-section">
+    <h2 class="section-title"><span class="i18n" lang="en">recent changes</span><span class="i18n" lang="nl">recente wijzigingen</span></h2>
+    <div class="manage-list" id="list-changelog"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span><span class="i18n" lang="en">writes only from your home network</span><span class="i18n" lang="nl">schrijven alleen vanaf je thuisnetwerk</span></span>
+  <span class="meta-sep">|</span>
+  <span>HN Algolia · GitHub · OpenRouter · arXiv · RSS</span>
+</footer>
+
+<script src="/assets/i18n.js" defer></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/manage.js" defer></script>
+</body>
+</html>

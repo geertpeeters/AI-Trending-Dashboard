@@ -1,0 +1,2 @@
+# dagelijkse cron: crawl -> score -> AI-review -> render (06:00)
+0 6 * * * cd /app && mkdir -p data/logs && python3 pipeline/crawl.py >> data/logs/cron.log 2>&1

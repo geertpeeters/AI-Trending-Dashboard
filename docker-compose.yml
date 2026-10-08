@@ -1,0 +1,43 @@
+services:
+  web:
+    build: .
+    container_name: ai-trending-web
+    command: sh -c "test -f site/index.html || python3 pipeline/crawl.py; exec python3 server/server.py"
+    networks:
+      - infra-net
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=infra-net"
+      - "traefik.http.routers.ai-trending-dashboard.rule=Host(`ai-trending-dashboard.test`)"
+      - "traefik.http.routers.ai-trending-dashboard.entrypoints=web"
+      - "traefik.http.services.ai-trending-dashboard.loadbalancer.server.port=8184"
+    volumes:
+      - ./site:/app/site
+      - ./data:/app/data
+      - ./config:/app/config
+    env_file:
+      - .env
+    environment:
+      PORT: "8184"
+    restart: unless-stopped
+
+  scheduler:
+    build: .
+    container_name: ai-trending-scheduler
+    command: sh -c "cp /etc/ai-trending/crontab /etc/crontabs/root && chmod 600 /etc/crontabs/root && exec crond -f -l 6"
+    networks:
+      - infra-net
+    volumes:
+      - ./site:/app/site
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./ops/crontab:/etc/ai-trending/crontab:ro
+    env_file:
+      - .env
+    restart: unless-stopped
+
+networks:
+  infra-net:
+    external: true
+    name: infra-net

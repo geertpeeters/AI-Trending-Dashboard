@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help · AI Trending</title>
+<meta name="description" content="Operational manual for the dashboard.">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="help">
+<header class="site-header">
+  <a class="brand" href="/index.html" data-tip-en="Back to the dashboard" data-tip-nl="Terug naar het dashboard">AI&nbsp;TRENDING<span class="cursor" aria-hidden="true">_</span></a>
+  <div class="header-meta">
+    <span class="meta-key"><span class="i18n" lang="en">updated</span><span class="i18n" lang="nl">bijgewerkt</span>:</span>
+    <span class="meta-val">2026-10-07T16:16:01+00:00</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-key"><span class="i18n" lang="en">items</span><span class="i18n" lang="nl">items</span>:</span>
+    <span class="meta-val">312</span>
+  </div>
+  <nav class="header-actions">
+    <a class="head-link" href="/search.html" data-tip-en="Search titles, tags, summaries and categories" data-tip-nl="Zoek in titels, tags, samenvattingen en categorieën"><span class="i18n" lang="en">search</span><span class="i18n" lang="nl">zoek</span></a>
+    <a class="head-link" href="/manage.html" data-tip-en="Add your own references, topics and sources — writes only from your home network" data-tip-nl="Voeg eigen referenties, topics en bronnen toe — schrijven alleen vanaf je thuisnetwerk"><span class="i18n" lang="en">manage</span><span class="i18n" lang="nl">beheren</span></a>
+    <a class="head-link" href="/help.html" data-tip-en="Help: how this dashboard runs and how to operate it" data-tip-nl="Help: zo draait en bedien je dit dashboard"><span class="i18n" lang="en">help</span><span class="i18n" lang="nl">help</span></a>
+    <div class="lang-switch" role="group" aria-label="language">
+      <button type="button" class="lang-btn" data-lang="nl" data-tip-en="Switch the site to Dutch" data-tip-nl="Zet de site op Nederlands">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" data-tip-en="Switch the site to English" data-tip-nl="Zet de site op Engels">EN</button>
+    </div>
+  </nav>
+</header>
+
+<nav class="tabs-wrap" aria-label="categories">
+  <div class="tabs-fade tabs-fade--left" aria-hidden="true"></div>
+  <div class="tabs" id="tabs">
+    <a class="tab " data-cat="all" href="/index.html" data-tip-en="Show every category" data-tip-nl="Toon alle categorieën"><span class="i18n" lang="en">all</span><span class="i18n" lang="nl">alles</span></a>
+    
+    <a class="tab " data-cat="models" href="/categories/models.html" data-tip-en="Show this category: Models" data-tip-nl="Toon deze categorie: Modellen"><span class="i18n" lang="en">Models</span><span class="i18n" lang="nl">Modellen</span></a>
+    
+    <a class="tab " data-cat="agentic-frameworks" href="/categories/agentic-frameworks.html" data-tip-en="Show this category: Agentic frameworks" data-tip-nl="Toon deze categorie: Agentic frameworks"><span class="i18n" lang="en">Agentic frameworks</span><span class="i18n" lang="nl">Agentic frameworks</span></a>
+    
+    <a class="tab " data-cat="skill-design" href="/categories/skill-design.html" data-tip-en="Show this category: Skill design" data-tip-nl="Toon deze categorie: Skill-design"><span class="i18n" lang="en">Skill design</span><span class="i18n" lang="nl">Skill-design</span></a>
+    
+    <a class="tab " data-cat="ai-standaarden" href="/categories/ai-standaarden.html" data-tip-en="Show this category: AI standards" data-tip-nl="Toon deze categorie: AI-standaarden"><span class="i18n" lang="en">AI standards</span><span class="i18n" lang="nl">AI-standaarden</span></a>
+    
+    <a class="tab " data-cat="token-providers" href="/categories/token-providers.html" data-tip-en="Show this category: Token providers" data-tip-nl="Toon deze categorie: Tokenproviders"><span class="i18n" lang="en">Token providers</span><span class="i18n" lang="nl">Tokenproviders</span></a>
+    
+    <a class="tab " data-cat="top-20-free-models" href="/categories/top-20-free-models.html" data-tip-en="Show this category: Top 20 free models" data-tip-nl="Toon deze categorie: Top 20 gratis modellen"><span class="i18n" lang="en">Top 20 free models</span><span class="i18n" lang="nl">Top 20 gratis modellen</span></a>
+    
+    <a class="tab " data-cat="token-compressors" href="/categories/token-compressors.html" data-tip-en="Show this category: Token compressors" data-tip-nl="Toon deze categorie: Tokencompressors"><span class="i18n" lang="en">Token compressors</span><span class="i18n" lang="nl">Tokencompressors</span></a>
+    
+    <a class="tab " data-cat="decision-models" href="/categories/decision-models.html" data-tip-en="Show this category: Decision models" data-tip-nl="Toon deze categorie: Beslismodellen"><span class="i18n" lang="en">Decision models</span><span class="i18n" lang="nl">Beslismodellen</span></a>
+    
+  </div>
+  <div class="tabs-fade tabs-fade--right" aria-hidden="true"></div>
+</nav>
+
+<main id="main" class="page-help">
+
+<section class="page-head">
+  <h1 class="page-title"><span class="i18n" lang="en">Help · operating the dashboard</span><span class="i18n" lang="nl">Help · het dashboard bedienen</span></h1>
+  <p class="page-desc"><span class="i18n" lang="en">Operational manual: how the site gets its data, what runs when, and how to change things safely.</span><span class="i18n" lang="nl">Operationele handleiding: waar de site zijn data vandaan haalt, wat wanneer draait en hoe je veilig dingen wijzigt.</span></p>
+</section>
+
+<div class="help">
+  <section class="help-section">
+    <h2>1 · <span class="i18n" lang="en">Daily rhythm</span><span class="i18n" lang="nl">Dagelijks ritme</span></h2>
+    <p><span class="i18n" lang="en">The site is a static build. Every day at 06:00 UTC the scheduler container runs a crawl: fetch sources, score items, AI-review, then re-render every page. The timestamp in the header shows when the current build finished.</span><span class="i18n" lang="nl">De site is een statische build. Elke dag om 06:00 UTC draait de scheduler-container een crawl: bronnen ophalen, items scoren, AI-review en daarna alle pagina&#39;s opnieuw renderen. De tijd in de header is het moment waarop de huidige build klaar kwam.</span></p>
+    <p><span class="i18n" lang="en">Between runs you can trigger a crawl yourself: Manage → crawl now (writes only from your home network). Changes you make on the Manage page are applied at the next crawl.</span><span class="i18n" lang="nl">Tussen runs door kun je zelf een crawl starten: Beheren → nu crawlen (schrijven alleen vanaf je thuisnetwerk). Wijzigingen op de Beheerpagina gelden bij de volgende crawl.</span></p>
+  </section>
+
+  <section class="help-section">
+    <h2>2 · <span class="i18n" lang="en">Commands</span><span class="i18n" lang="nl">Commando&#39;s</span></h2>
+    <ul>
+      <li><code>docker compose up -d --build</code> — <span class="i18n" lang="en">build and start web + scheduler (run after every code or .env change)</span><span class="i18n" lang="nl">bouwt en start web + scheduler (draai na elke code- of .env-wijziging)</span></li>
+      <li><code>ops/dev.sh</code> — <span class="i18n" lang="en">local development: crawl (optional flags) + server on port 8184</span><span class="i18n" lang="nl">lokale ontwikkeling: crawl (met flags) + server op poort 8184</span></li>
+      <li><code>python3 pipeline/crawl.py</code> — <span class="i18n" lang="en">one crawl with AI-review</span><span class="i18n" lang="nl">een crawl met AI-review</span></li>
+      <li><code>python3 pipeline/crawl.py --no-ai</code> — <span class="i18n" lang="en">fetch + score + render, skip AI</span><span class="i18n" lang="nl">ophalen + scoren + renderen, zonder AI</span></li>
+      <li><code>python3 pipeline/crawl.py --categories models,token-providers</code> — <span class="i18n" lang="en">only these categories</span><span class="i18n" lang="nl">alleen deze categorieën</span></li>
+      <li><code>python3 pipeline/crawl.py --resummarize</code> — <span class="i18n" lang="en">re-review every item (backfill after a prompt change)</span><span class="i18n" lang="nl">alle items opnieuw beoordelen (backfill na promptwijziging)</span></li>
+      <li><code>python3 server/server.py</code> — <span class="i18n" lang="en">run the server + API standalone (no crawl)</span><span class="i18n" lang="nl">draai alleen de server + API (geen crawl)</span></li>
+      <li><code>python3 -m unittest discover -s tests -v</code> — <span class="i18n" lang="en">run the test suite</span><span class="i18n" lang="nl">draai de tests</span></li>
+    </ul>
+    <p><span class="i18n" lang="en">Logs: docker logs ai-trending-web, or data/logs/ (every web-triggered crawl writes web-trigger-*.log there).</span><span class="i18n" lang="nl">Logs: docker logs ai-trending-web, of data/logs/ (elke via de web gestarte crawl schrijft daar web-trigger-*.log).</span></p>
+  </section>
+
+  <section class="help-section">
+    <h2>3 · <span class="i18n" lang="en">Settings (.env)</span><span class="i18n" lang="nl">Instellingen (.env)</span></h2>
+    <ul>
+      <li><code>OMNIROUTE_URL</code> / <code>OMNIROUTE_API_KEY</code> — <span class="i18n" lang="en">OpenAI-compatible gateway the AI-review runs on (URL from inside the gateway network).</span><span class="i18n" lang="nl">OpenAI-compatibele gateway waarop de AI-review draait (URL vanuit het gateway-netwerk).</span></li>
+      <li><code>OMNIROUTE_MODEL</code> — <span class="i18n" lang="en">model preference; auto/best-fast is the fastest for 8-item review batches.</span><span class="i18n" lang="nl">modelvoorkeur; auto/best-fast is het snelste voor 8-items review-batches.</span></li>
+      <li><code>WRITE_NETWORKS</code> — <span class="i18n" lang="en">networks allowed to write via the website (references, topics, sources, crawl). Empty = deny all. The 403 message shows your IP and the allowed ranges; 172.16.0.0/12 covers docker, so opening the site from the server itself also works.</span><span class="i18n" lang="nl">netwerken die mogen schrijven via de website (referenties, topics, bronnen, crawl). Leeg = alles geweigerd. De 403-melding toont jouw IP en de toegestane ranges; 172.16.0.0/12 dekt docker, dus de site openen vanaf de server zelf werkt ook.</span></li>
+      <li><code>RATING_SALT</code> — <span class="i18n" lang="en">salt for anonymising rating IPs (change it in production)</span><span class="i18n" lang="nl">zout om rating-IP&#39;s te anonimiseren (wijzig dit in productie)</span></li>
+      <li><code>MAX_WRITES_PER_HOUR</code> / <code>MAX_RATINGS_PER_HOUR</code> — <span class="i18n" lang="en">rate limits per IP</span><span class="i18n" lang="nl">rate-limits per IP</span></li>
+      <li><code>GITHUB_TOKEN</code> — <span class="i18n" lang="en">optional: higher GitHub search rate</span><span class="i18n" lang="nl">optioneel: hoger GitHub-zoekratio</span></li>
+      <li><code>PORT</code> — <span class="i18n" lang="en">server port inside the container (default 8184)</span><span class="i18n" lang="nl">serverpoort in de container (standaard 8184)</span></li>
+    </ul>
+    <p><span class="i18n" lang="en">After changing .env or server code: docker compose up -d --build (containers are recreated, so the new settings apply).</span><span class="i18n" lang="nl">Na wijzigen van .env of servercode: docker compose up -d --build (containers worden opnieuw aangemaakt, de nieuwe instellingen gelden dan).</span></p>
+  </section>
+
+  <section class="help-section">
+    <h2>4 · <span class="i18n" lang="en">Web management</span><span class="i18n" lang="nl">Web-beheer</span></h2>
+    <ul>
+      <li><span class="i18n" lang="en">References: a curated URL per category; injected into the index at the next crawl and never dropped.</span><span class="i18n" lang="nl">Referenties: een handmatige URL per categorie; wordt bij de volgende crawl in de index gezet en nooit gedropt.</span></li>
+      <li><span class="i18n" lang="en">Topics: search queries that drive source fetches and AI keyword matching. AI-generated topics are marked with · AI.</span><span class="i18n" lang="nl">Topics: zoekopdrachten die het ophalen van bronnen en de AI-sleutelwoordmatch sturen. AI-gegenereerde topics zijn gemarkeerd met · AI.</span></li>
+      <li><span class="i18n" lang="en">Sources: extra feeds/searches per category (hn_search, github_search, arxiv, rss, openrouter).</span><span class="i18n" lang="nl">Bronnen: extra feeds/zoekopdrachten per categorie (hn_search, github_search, arxiv, rss, openrouter).</span></li>
+      <li><span class="i18n" lang="en">Crawl now: starts a full crawl in the background; refresh the page in a few minutes.</span><span class="i18n" lang="nl">Nu crawlen: start een volledige crawl op de achtergrond; ververs de pagina over enkele minuten.</span></li>
+      <li><span class="i18n" lang="en">Every change is logged in the changelog on this page and applied at the next crawl. Writes are limited to WRITE_NETWORKS and to a maximum of 60 per hour per IP.</span><span class="i18n" lang="nl">Elke wijziging staat in het changelog op deze pagina en geldt bij de volgende crawl. Schrijven is beperkt tot WRITE_NETWORKS en maximaal 60 keer per uur per IP.</span></li>
+    </ul>
+  </section>
+
+  <section class="help-section">
+    <h2>5 · <span class="i18n" lang="en">How the AI review works</span><span class="i18n" lang="nl">Zo werkt de AI-review</span></h2>
+    <p><span class="i18n" lang="en">Each batch of up to 8 items is scored (relevance 0-10, keep/drop), tagged, and given a summary (600-800 chars), a one-line purpose and a kind (tool/model/paper/…). Results land in data/items.json: summary, purpose, kind, relevance, tags, ai_verdict and ai_reviewed_at.</span><span class="i18n" lang="nl">Elke batch van maximaal 8 items wordt gescoord (relevantie 0-10, keep/drop), getagd en krijgt een samenvatting (600-800 tekens), een éénregelige purpose en een soort (tool/model/paper/…). De resultaten staan in data/items.json: summary, purpose, kind, relevance, tags, ai_verdict en ai_reviewed_at.</span></p>
+    <p><span class="i18n" lang="en">Self-healing: an item without a purpose is picked up again by the next run, even inside the 7-day review window. So if a batch failed (gateway timeout), the next crawl simply retries it — nothing is lost.</span><span class="i18n" lang="nl">Zelfherstel: een item zonder purpose wordt door de volgende run weer opgepakt, zelfs binnen het 7-dagen review-venster. Als een batch dus faalde (gateway-timeout), probeert de volgende crawl het gewoon opnieuw — er gaat niets verloren.</span></p>
+    <p><span class="i18n" lang="en">Failing batches are logged and retried with backoff. For a full backfill after a prompt change, run: python3 pipeline/crawl.py --resummarize.</span><span class="i18n" lang="nl">Gefaalde batches worden gelogd en met backoff opnieuw geprobeerd. Voor een volledige backfill na een promptwijziging: python3 pipeline/crawl.py --resummarize.</span></p>
+  </section>
+
+  <section class="help-section">
+    <h2>6 · <span class="i18n" lang="en">Data and files</span><span class="i18n" lang="nl">Data en bestanden</span></h2>
+    <ul>
+      <li><code>data/items.json</code> — <span class="i18n" lang="en">the index: every item with scores, AI fields and history flags</span><span class="i18n" lang="nl">de index: elk item met scores, AI-velden en history-flags</span></li>
+      <li><code>data/ratings.json</code> — <span class="i18n" lang="en">5-star ratings (hashed per IP + salt)</span><span class="i18n" lang="nl">5-sterrenbeoordelingen (gehasht per IP + zout)</span></li>
+      <li><code>data/references.json</code> — <span class="i18n" lang="en">your manual references</span><span class="i18n" lang="nl">jouw handmatige referenties</span></li>
+      <li><code>data/history/</code> — <span class="i18n" lang="en">daily trend snapshots (drives sparklines and deltas)</span><span class="i18n" lang="nl">dagelijkse trend-snapshots (voedt sparklines en deltas)</span></li>
+      <li><code>data/config-changelog.jsonl</code> — <span class="i18n" lang="en">audit trail of configuration changes</span><span class="i18n" lang="nl">audittrail van configuratiewijzigingen</span></li>
+      <li><code>config/categories.yaml</code> — <span class="i18n" lang="en">categories, sources and topics (the single source of truth)</span><span class="i18n" lang="nl">categorieën, bronnen en topics (de single source of truth)</span></li>
+      <li><code>data/search-index.json</code>, <code>data/categories.json</code> — <span class="i18n" lang="en">consumed by the client-side search and the tab bar</span><span class="i18n" lang="nl">gebruikt door de client-side search en de tab-balk</span></li>
+      <li><code>data/.crawl.lock</code> — <span class="i18n" lang="en">mutex between cron and web-triggered crawls; auto-released when the holder dies</span><span class="i18n" lang="nl">mutex tussen cron- en web-crawls; wordt vrijgegeven als de houder sterft</span></li>
+      <li><code>site/</code> — <span class="i18n" lang="en">generated HTML; do not edit by hand</span><span class="i18n" lang="nl">gegenereerde HTML; niet handmatig bewerken</span></li>
+    </ul>
+  </section>
+
+  <section class="help-section">
+    <h2>7 · <span class="i18n" lang="en">Troubleshooting</span><span class="i18n" lang="nl">Problemen oplossen</span></h2>
+    <ul>
+      <li><b>403 on saving</b> — <span class="i18n" lang="en">your IP is not in WRITE_NETWORKS; the error message shows the IP the server saw and the allowed ranges.</span><span class="i18n" lang="nl">jouw IP staat niet in WRITE_NETWORKS; de foutmelding toont het IP dat de server zag en de toegestane ranges.</span></li>
+      <li><b>HTML instead of JSON</b> — <span class="i18n" lang="en">a proxy or server error page reached the browser; the UI now reports this as &#34;server did not respond with JSON (HTTP …)&#34;. Check docker logs ai-trending-web.</span><span class="i18n" lang="nl">een proxy- of serverfoutpagina bereikte de browser; de UI meldt dit nu als &#34;server antwoordde niet met JSON (HTTP …)&#34;. Kijk in docker logs ai-trending-web.</span></li>
+      <li><b>Crawl will not start</b> — <span class="i18n" lang="en">data/.crawl.lock exists and is fresh: another crawl is running. It is stale after 30 minutes or when the holding pid is dead.</span><span class="i18n" lang="nl">data/.crawl.lock bestaat en is recent: er draait al een crawl. Hij is verouderd na 30 minuten of als de pid dood is.</span></li>
+      <li><b>AI review slow or failing</b> — <span class="i18n" lang="en">gateway peaks last 20-60 minutes; batches time out and are retried next run. Check data/logs/ and the gateway itself.</span><span class="i18n" lang="nl">gateway-pieken duren 20-60 minuten; batches lopen vast en worden de volgende run opnieuw geprobeerd. Kijk in data/logs/ en naar de gateway zelf.</span></li>
+      <li><b>Site not updated</b> — <span class="i18n" lang="en">look in data/logs/web-trigger-*.log or docker logs ai-trending-scheduler; /healthz must return {&#34;status&#34;:&#34;ok&#34;}.</span><span class="i18n" lang="nl">kijk in data/logs/web-trigger-*.log of docker logs ai-trending-scheduler; /healthz moet {&#34;status&#34;:&#34;ok&#34;} teruggeven.</span></li>
+      <li><b>Item vanished</b> — <span class="i18n" lang="en">items are pruned 30 days after their last sighting by any source; manual references are re-injected every crawl.</span><span class="i18n" lang="nl">items verdwijnen 30 dagen na hun laatste waarneming door een bron; handmatige referenties worden elke crawl opnieuw geïnjecteerd.</span></li>
+    </ul>
+  </section>
+
+  <section class="help-section">
+    <h2>8 · <span class="i18n" lang="en">Privacy and security</span><span class="i18n" lang="nl">Privacy en beveiliging</span></h2>
+    <ul>
+      <li><span class="i18n" lang="en">Ratings are stored as a hash of your IP + RATING_SALT, never as a raw address.</span><span class="i18n" lang="nl">Beoordelingen worden bewaard als hash van je IP + RATING_SALT, nooit als ruw adres.</span></li>
+      <li><span class="i18n" lang="en">All writes (references, topics, sources, crawl) are restricted to WRITE_NETWORKS and rate-limited per IP.</span><span class="i18n" lang="nl">Alle schrijfacties (referenties, topics, bronnen, crawl) zijn beperkt tot WRITE_NETWORKS en rate-limited per IP.</span></li>
+      <li><span class="i18n" lang="en">The site is fully static; there are no third-party trackers or analytics.</span><span class="i18n" lang="nl">De site is volledig statisch; geen third-party trackers of analytics.</span></li>
+    </ul>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <span><span class="i18n" lang="en">static build</span><span class="i18n" lang="nl">bouw</span>: 2026-10-07T16:16:01+00:00</span>
+  <span class="meta-sep">|</span>
+  <span><span class="i18n" lang="en">sources</span><span class="i18n" lang="nl">bronnen</span>: HN Algolia · GitHub · OpenRouter · arXiv · RSS</span>
+  <span class="meta-sep">|</span>
+  <span><span class="i18n" lang="en">daily AI review at 06:00 UTC</span><span class="i18n" lang="nl">dagelijkse AI-review om 06:00 UTC</span></span>
+</footer>
+
+<script src="/assets/i18n.js" defer></script>
+<script src="/assets/app.js" defer></script>
+
+</body>
+</html>

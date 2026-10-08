@@ -1,0 +1,369 @@
+version: 1
+defaults:
+  refresh: daily
+  max_items_per_category: 20
+ai_review:
+  enabled: true
+  min_relevance: 5
+  batch_size: 8
+  max_new_topics_per_run: 5
+categories:
+- id: models
+  title:
+    en: Models
+    nl: Modellen
+  description:
+    en: Frontier and open-weight LLM releases, benchmarks and capabilities.
+    nl: Frontier- en open-weight LLM-releases, benchmarks en mogelijkheden.
+  sources:
+  - type: hn_search
+    query: LLM release
+    limit: 15
+  - type: hn_search
+    query: open weights model
+    limit: 15
+  - type: github_search
+    query: topic:llm sort:stars
+    limit: 15
+  topics:
+  - id: frontier-models
+    title:
+      en: Frontier models
+      nl: Frontiermodellen
+    query: frontier LLM
+    keywords:
+    - gpt
+    - claude
+    - gemini
+    - llama
+    - qwen
+    - gemma
+    - deepseek
+    - mistral
+  - id: open-weight-releases
+    title:
+      en: Open weight releases
+      nl: Open-weight releases
+    query: open weights release
+    keywords:
+    - weights
+    - checkpoint
+    - benchmark
+    - context window
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: agentic-frameworks
+  title:
+    en: Agentic frameworks
+    nl: Agentic frameworks
+  description:
+    en: Frameworks, runtimes and patterns for building autonomous agents.
+    nl: Frameworks, runtimes en patronen voor het bouwen van autonome agents.
+  sources:
+  - type: hn_search
+    query: agent framework
+    limit: 15
+  - type: github_search
+    query: topic:ai-agent sort:stars
+    limit: 15
+  - type: arxiv
+    query: agentic framework LLM
+    limit: 15
+  topics:
+  - id: agent-runtimes
+    title:
+      en: Agent runtimes
+      nl: Agent-runtimes
+    query: agent runtime
+    keywords:
+    - langgraph
+    - crewai
+    - autogen
+    - semantic kernel
+    - openai-agents
+    - swarm
+  - id: multi-agent-orchestration
+    title:
+      en: Multi-agent orchestration
+      nl: Multi-agent-orchestratie
+    query: multi agent orchestration
+    keywords:
+    - orchestration
+    - handoff
+    - supervisor
+    - planner
+    - tool-use
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: skill-design
+  title:
+    en: Skill design
+    nl: Skill-design
+  description:
+    en: 'How agents learn reusable skills: prompts, instruction files, evals and tooling.'
+    nl: 'Hoe agents herbruikbare skills leren: prompts, instructiebestanden, evals en tooling.'
+  sources:
+  - type: hn_search
+    query: agent skills prompt
+    limit: 15
+  - type: github_search
+    query: topic:prompt-engineering sort:stars
+    limit: 15
+  - type: github_search
+    query: agent skills in:name sort:stars
+    limit: 15
+  topics:
+  - id: instruction-design
+    title:
+      en: Instruction file design
+      nl: Instructiebestand-design
+    query: instruction file agent
+    keywords:
+    - cursorrules
+    - claude.md
+    - agents.md
+    - skills
+    - playbook
+  - id: eval-and-testing
+    title:
+      en: Evals and testing
+      nl: Evals en testen
+    query: llm eval
+    keywords:
+    - eval
+    - benchmark
+    - regression
+    - golden set
+  - id: code-yeongyu-oh-my-openagent
+    title:
+      en: code-yeongyu/oh-my-openagent
+      nl: code-yeongyu/oh-my-openagent
+    query: omo
+    keywords:
+    - code
+    - yeongyu
+    - openagent
+    ai_generated: true
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: ai-standaarden
+  title:
+    en: AI standards
+    nl: AI-standaarden
+  description:
+    en: AGENTS.md, Agent Skills, MCP, A2A and the other interop standards.
+    nl: AGENTS.md, Agent Skills, MCP, A2A en de andere interop-standaarden.
+  sources:
+  - type: hn_search
+    query: MCP Model Context Protocol
+    limit: 15
+  - type: hn_search
+    query: A2A agent to agent protocol
+    limit: 15
+  - type: github_search
+    query: topic:model-context-protocol sort:stars
+    limit: 15
+  topics:
+  - id: mcp
+    title:
+      en: MCP
+      nl: MCP
+    query: model context protocol
+    keywords:
+    - mcp
+    - server
+    - tools
+    - resources
+    - prompts
+  - id: agents-md
+    title:
+      en: AGENTS.md / Agent Skills
+      nl: AGENTS.md / Agent Skills
+    query: AGENTS.md
+    keywords:
+    - agents.md
+    - skill
+    - spec
+    - open standard
+  - id: a2a
+    title:
+      en: A2A
+      nl: A2A
+    query: agent2agent
+    keywords:
+    - a2a
+    - agent card
+    - interop
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: token-providers
+  title:
+    en: Token providers
+    nl: Tokenproviders
+  description:
+    en: Inference providers, pricing moves, rate limits and free-token offers.
+    nl: Inferenceproviders, prijsbewegingen, rate limits en gratis-token-aanbiedingen.
+  sources:
+  - type: hn_search
+    query: inference API pricing
+    limit: 15
+  - type: hn_search
+    query: free tokens LLM API
+    limit: 15
+  - type: openrouter
+    scope: trending
+    query: ''
+    limit: 15
+  topics:
+  - id: pricing-moves
+    title:
+      en: Pricing moves
+      nl: Prijswijzigingen
+    query: inference pricing
+    keywords:
+    - pricing
+    - per token
+    - rate limit
+    - batch
+    - cache
+  - id: free-inference
+    title:
+      en: Free inference
+      nl: Gratis inference
+    query: free inference
+    keywords:
+    - free
+    - trial
+    - quota
+    - tier
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: top-20-free-models
+  title:
+    en: Top 20 free models
+    nl: Top 20 gratis modellen
+  description:
+    en: The highest ranked models you can call for zero credits.
+    nl: De best scorende modellen die je gratis kunt aanroepen.
+  sources:
+  - type: openrouter
+    scope: free
+    limit: 20
+    query: ''
+  topics:
+  - id: zero-credit-models
+    title:
+      en: Zero-credit models
+      nl: Nul-credit-modellen
+    query: free model
+    keywords:
+    - free
+    - zero
+    - credits
+  ai_review:
+    enabled: true
+    min_relevance: 3
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: token-compressors
+  title:
+    en: Token compressors
+    nl: Tokencompressors
+  description:
+    en: 'Context and prompt compression: fewer tokens, same signal.'
+    nl: 'Context- en promptcompressie: minder tokens,zelfde signaal.'
+  sources:
+  - type: hn_search
+    query: context compression LLM
+    limit: 15
+  - type: github_search
+    query: context compression llm sort:stars
+    limit: 15
+  - type: arxiv
+    query: context compression language model
+    limit: 15
+  topics:
+  - id: context-compression
+    title:
+      en: Context compression
+      nl: Contextcompressie
+    query: context compression
+    keywords:
+    - kv cache
+    - attention sink
+    - summary
+    - pruning
+    - quantization
+  - id: prompt-compression
+    title:
+      en: Prompt compression
+      nl: Promptcompressie
+    query: prompt compression
+    keywords:
+    - gisting
+    - LLMLingua
+    - token saving
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
+- id: decision-models
+  title:
+    en: Decision models
+    nl: Beslismodellen
+  description:
+    en: Jevons paradox, System One / System Two thinking and model routing for agents.
+    nl: Jevons-paradox, System One/Ten-denken en modelrouting voor agents.
+  sources:
+  - type: hn_search
+    query: System One System Two decision
+    limit: 15
+  - type: hn_search
+    query: Jevons paradox compute
+    limit: 15
+  - type: arxiv
+    query: system 1 system 2 language model routing
+    limit: 15
+  topics:
+  - id: system-one-two
+    title:
+      en: System One / System Two
+      nl: System One / System Two
+    query: system 1 system 2 model
+    keywords:
+    - fast model
+    - slow model
+    - cascade
+    - routing
+    - distillation
+  - id: jevons
+    title:
+      en: Jevons and compute demand
+      nl: Jevons en computervraag
+    query: Jevons compute
+    keywords:
+    - jevons
+    - efficiency
+    - demand
+    - inference cost
+  ai_review:
+    enabled: true
+    min_relevance: 5
+    batch_size: 8
+    max_new_topics_per_run: 5
